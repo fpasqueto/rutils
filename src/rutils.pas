@@ -216,6 +216,17 @@ function Iif(const ACondition: Boolean;
 function Iif(const ACondition: Boolean;
   const ATruePart, AFalsePart: Variant): Variant; overload;
 
+function Ifso(const AValue: string): string; overload;
+function Ifso(const AValue: Char): Char; overload;
+function Ifso(const AValue: Byte): Byte; overload;
+function Ifso(const AValue: Integer): Integer; overload;
+function Ifso(const AValue: Cardinal): Cardinal; overload;
+function Ifso(const AValue: Double): Double; overload;
+function Ifso(const AValue: Boolean): Boolean; overload;
+function Ifso(const AValue: Pointer): Pointer; overload;
+function Ifso(const AValue: Int64): Int64; overload;
+function Ifso(const AValue: Variant): Variant; overload;
+
 { JSON }
 
 function ParamsToJSON(const AParams: string;
@@ -1778,6 +1789,83 @@ begin
     Result := ATruePart
   else
     Result := AFalsePart;
+end;
+
+function Ifso(const AValue: string): string;
+begin
+  if AValue = '' then
+    Result := ''
+  else
+    Result := AValue;
+end;
+
+function Ifso(const AValue: Char): Char;
+begin
+  if AValue = #0 then
+    Result := #0
+  else
+    Result := AValue;
+end;
+
+function Ifso(const AValue: Byte): Byte;
+begin
+  if AValue = 0 then
+    Result := 0
+  else
+    Result := AValue;
+end;
+
+function Ifso(const AValue: Integer): Integer;
+begin
+  if AValue = 0 then
+    Result := 0
+  else
+    Result := AValue;
+end;
+
+function Ifso(const AValue: Cardinal): Cardinal;
+begin
+  if AValue = 0 then
+    Result := 0
+  else
+    Result := AValue;
+end;
+
+function Ifso(const AValue: Double): Double;
+begin
+  if AValue = 0 then
+    Result := 0
+  else
+    Result := AValue;
+end;
+
+function Ifso(const AValue: Boolean): Boolean;
+begin
+  Result := AValue;
+end;
+
+function Ifso(const AValue: Pointer): Pointer;
+begin
+  if Assigned(AValue) then
+    Result := AValue
+  else
+    Result := nil;
+end;
+
+function Ifso(const AValue: Int64): Int64;
+begin
+  if AValue = 0 then
+    Result := 0
+  else
+    Result := AValue;
+end;
+
+function Ifso(const AValue: Variant): Variant;
+begin
+  if AValue = Null then
+    Result := Null
+  else
+    Result := AValue;
 end;
 
 { JSON }
