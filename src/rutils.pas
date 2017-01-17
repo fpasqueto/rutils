@@ -401,11 +401,11 @@ begin
   VRegEx := TRegExpr.Create;
   try
     VRegEx.ModifierI := rmModifierI in AModifiers;
-    VRegEx.ModifierR := rmModifierI in AModifiers;
-    VRegEx.ModifierS := rmModifierI in AModifiers;
-    VRegEx.ModifierG := rmModifierI in AModifiers;
-    VRegEx.ModifierM := rmModifierI in AModifiers;
-    VRegEx.ModifierX := rmModifierI in AModifiers;
+    VRegEx.ModifierR := rmModifierR in AModifiers;
+    VRegEx.ModifierS := rmModifierS in AModifiers;
+    VRegEx.ModifierG := rmModifierG in AModifiers;
+    VRegEx.ModifierM := rmModifierM in AModifiers;
+    VRegEx.ModifierX := rmModifierX in AModifiers;
     VRegEx.Expression := AExpression;
     if VRegEx.Exec(S) then
       Result := VRegEx.Match[AMatch];
@@ -423,11 +423,11 @@ begin
   try
     AStrs.Clear;
     VRegEx.ModifierI := rmModifierI in AModifiers;
-    VRegEx.ModifierR := rmModifierI in AModifiers;
-    VRegEx.ModifierS := rmModifierI in AModifiers;
-    VRegEx.ModifierG := rmModifierI in AModifiers;
-    VRegEx.ModifierM := rmModifierI in AModifiers;
-    VRegEx.ModifierX := rmModifierI in AModifiers;
+    VRegEx.ModifierR := rmModifierR in AModifiers;
+    VRegEx.ModifierS := rmModifierS in AModifiers;
+    VRegEx.ModifierG := rmModifierG in AModifiers;
+    VRegEx.ModifierM := rmModifierM in AModifiers;
+    VRegEx.ModifierX := rmModifierX in AModifiers;
     VRegEx.Expression := AExpression;
     if VRegEx.Exec(S) then
       repeat
@@ -446,11 +446,11 @@ begin
   VRegEx := TRegExpr.Create;
   try
     VRegEx.ModifierI := rmModifierI in AModifiers;
-    VRegEx.ModifierR := rmModifierI in AModifiers;
-    VRegEx.ModifierS := rmModifierI in AModifiers;
-    VRegEx.ModifierG := rmModifierI in AModifiers;
-    VRegEx.ModifierM := rmModifierI in AModifiers;
-    VRegEx.ModifierX := rmModifierI in AModifiers;
+    VRegEx.ModifierR := rmModifierR in AModifiers;
+    VRegEx.ModifierS := rmModifierS in AModifiers;
+    VRegEx.ModifierG := rmModifierG in AModifiers;
+    VRegEx.ModifierM := rmModifierM in AModifiers;
+    VRegEx.ModifierX := rmModifierX in AModifiers;
     VRegEx.Expression := AExpression;
     Result := VRegEx.Replace(AStrOld, AStrNew, True);
   finally
